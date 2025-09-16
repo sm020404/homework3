@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Layout</title>
+  <style>
+    /* Step 1: Page Layout with Grid */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 250px 1fr;
+      grid-template-rows: 80px 1fr 60px;
+      height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      background: #4A90E2;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    nav {
+      grid-area: sidebar;
+      background: #f0f0f0;
+      display: flex; /* Step 2: Sidebar with Flexbox */
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 20px;
+      position: relative;
+    }
+
+    nav a {
+      margin: 10px 0;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .resume-btn {
+      position: absolute; /* Step 7: Positioning Resume Button */
+      bottom: 20px;
+      left: 20px;
+      background: #4A90E2;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .resume-btn:hover {
+      background: #357ABD;
+    }
+
+    main {
+      grid-area: main;
+      overflow-y: scroll;
+      padding: 20px;
+    }
+
+    footer {
+      grid-area: footer;
+      background: #4A90E2;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    footer .contact {
+      position: absolute; /* Step 6: Position Contact Info */
+      right: 20px;
+    }
+
+    /* Step 3: Styling Summary, Education, Experience */
+    .summary, .education, .experience {
+      margin-bottom: 30px;
+    }
+
+    .summary h2, .education h2, .experience h2 {
+      color: #4A90E2;
+      margin-bottom: 10px;
+    }
+
+    .summary p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    /* Step 4: Skills Section with Flexbox */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .skill {
+      background: #e0e0e0;
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    /* Step 5: Projects Section with Grid */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .project {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Step 1: Grid Layout -->
+  <header>
+    My Portfolio
+  </header>
+
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#" class="resume-btn">Download Resume</a>
+  </nav>
+
+  <main>
+    <!-- Step 3: Sections -->
+    <section id="summary" class="summary">
+      <h2>Summary</h2>
+      <p>Hello! I’m Sofia Mendoza, a Data Science & Software Engineering student passionate about analytics, tech, and creative problem solving.</p>
+    </section>
+
+    <section id="education" class="education">
+      <h2>Education</h2>
+      <table>
+        <tr>
+          <th>Institution</th>
+          <th>Degree</th>
+          <th>Duration</th>
+        </tr>
+        <tr>
+          <td>Northern Arizona University</td>
+          <td>B.S. Data Science & Software Engineering</td>
+          <td>2023 - 2027</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="experience" class="experience">
+      <h2>Experience</h2>
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Position</th>
+          <th>Duration</th>
+        </tr>
+        <tr>
+          <td>Enchantment Resort</td>
+          <td>Server</td>
+          <td>2023 - Present</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">SQL</div>
+        <div class="skill">R</div>
+        <div class="skill">HTML/CSS</div>
+        <div class="skill">Data Visualization</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Timely App</h3>
+          <img src="project1.jpg" alt="Timely App Screenshot">
+          <p>Created a scheduling app for students to share calendars and collaborate efficiently.</p>
+        </div>
+        <div class="project">
+          <h3>Virtual Pet App</h3>
+          <img src="project2.jpg" alt="Virtual Pet App Screenshot">
+          <p>Developed a React/Express/PostgreSQL web app where users can adopt and care for pets.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>&copy; 2025 Sofia Mendoza</p>
+    <div class="contact">
+      Email: sim89@nau.edu | GitHub: github.com/sm | LinkedIn: linkedin.com/in/sofia-mendoza
+    </div>
+  </footer>
+
+</body>
+</html>
