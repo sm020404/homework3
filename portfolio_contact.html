@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Layout - Sofia Mendoza</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 250px 1fr;
+      grid-template-rows: 80px 1fr 60px;
+      height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      background: #FF69B4;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    nav {
+      grid-area: sidebar;
+      background: #ffe4f1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 20px;
+      position: relative;
+    }
+
+    nav a {
+      margin: 10px 0;
+      text-decoration: none;
+      color: #d63384;
+      font-weight: bold;
+    }
+
+    .resume-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: #FF69B4;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .resume-btn:hover {
+      background: #d63384;
+    }
+
+    main {
+      grid-area: main;
+      overflow-y: scroll;
+      padding: 20px;
+      background: #fff0f5;
+    }
+
+    footer {
+      grid-area: footer;
+      background: #FF69B4;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .summary, .education, .experience, .contact {
+      margin-bottom: 30px;
+    }
+
+    .summary h2, .education h2, .experience h2, .skills h2, .contact h2 {
+      color: #d63384;
+      margin-bottom: 10px;
+    }
+
+    .summary p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      background: white;
+    }
+
+    table, th, td {
+      border: 1px solid #f5c2e7;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #ffd6eb;
+    }
+
+    .skills {
+      margin-bottom: 30px;
+    }
+
+    .skills-category {
+      margin-bottom: 15px;
+    }
+
+    .skills-category strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #d63384;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .project {
+      border: 1px solid #f5c2e7;
+      padding: 15px;
+      border-radius: 10px;
+      background: white;
+    }
+
+    .project h3 {
+      color: #d63384;
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    My Portfolio
+  </header>
+
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#" class="resume-btn">Download Resume</a>
+  </nav>
+
+  <main>
+    <section id="summary" class="summary">
+      <h2>Summary</h2>
+      <p>Hi! My name is Sofia Mendoza. I’m a student at Northern Arizona University double majoring in Data Science and Software Engineering with a minor in Advertising. I’m passionate about blending creativity with technical skills using data, coding, and design to solve problems and create meaningful digital experiences. I’m also deeply involved in leadership and community on campus.</p>
+    </section>
+
+    <section id="education" class="education">
+      <h2>Education</h2>
+      <table>
+        <tr>
+          <th>Institution</th>
+          <th>Degree</th>
+          <th>Duration</th>
+        </tr>
+        <tr>
+          <td>Northern Arizona University</td>
+          <td>B.S. Data Science & Software Engineering, Minor in Advertising</td>
+          <td>2022 - 2027</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="experience" class="experience">
+      <h2>Experience</h2>
+      <table>
+        <tr>
+          <th>Organization</th>
+          <th>Position</th>
+          <th>Duration</th>
+        </tr>
+        <tr>
+          <td>Data Science Club</td>
+          <td>President</td>
+          <td>2024 – Present</td>
+        </tr>
+        <tr>
+          <td>CHAARG</td>
+          <td>Vice President of Media</td>
+          <td>2024 – 2025</td>
+        </tr>
+        <tr>
+          <td>Internship</td>
+          <td>Data Analytics / Business Intelligence / Marketing</td>
+          <td>Summer 2024 – 2025</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>Skills</h2>
+      <div class="skills-category">
+        <strong>Programming Languages:</strong> Python, Java, SQL, HTML, CSS, JavaScript
+      </div>
+      <div class="skills-category">
+        <strong>Data Tools:</strong> R, Excel, Tableau
+      </div>
+      <div class="skills-category">
+        <strong>Frameworks & Technologies:</strong> React.js, Express.js, PostgreSQL
+      </div>
+      <div class="skills-category">
+        <strong>Soft Skills:</strong> Project Management, Communication, Leadership, Content Creation
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Timely App</h3>
+          <p>A scheduling web app that lets students import calendars, connect with classmates, and create shared schedules for collaboration.</p>
+        </div>
+        <div class="project">
+          <h3>Virtual Pet Web App</h3>
+          <p>Built with React.js (frontend), Express.js (backend), and PostgreSQL (database). Users can adopt and care for virtual pets.</p>
+        </div>
+        <div class="project">
+          <h3>Data Storytelling</h3>
+          <p>Translated complex datasets (unemployment, housing, pricing trends) into insights, visuals, and presentations for a company project.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:sim89@nau.edu">sim89@nau.edu</a></p>
+      <p>GitHub: <a href="https://github.com/sm020404" target="_blank">github.com/sm020404</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/sofia-mendoza-a12063294/" target="_blank">linkedin.com/in/sofia-mendoza-a12063294/</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sofia Mendoza</p>
+  </footer>
+
+</body>
+</html>
